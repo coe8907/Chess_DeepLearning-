@@ -1,0 +1,4 @@
+﻿  Tile.cpp
+c:\users\oliver\desktop\final_thing\input.h(25): warning C4552: '-': operator has no effect; expected operator with side-effect
+c:\users\oliver\desktop\final_thing\tile.cpp(537): warning C4018: '<': signed/unsigned mismatch
+  Final_thing.vcxproj -> C:\Users\Oliver\Desktop\Final_thing\Debug\Final_thing.exe
