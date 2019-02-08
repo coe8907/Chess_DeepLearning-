@@ -46,54 +46,70 @@ std::vector <Tile::pos> Tile::get_moves(std::vector<Tile*>* tiles) {
 	// pawn
 	if (tile_peice == 1) { 
 		if (black) { // black
-			if (tiles->at(Convert_xy_to_id(tile_x, tile_y + 1))->tile_peice == 7) { // if the tile infront is clear
-				temp.x = tile_x;
-				temp.y = tile_y + 1;
-				moves.push_back(temp);
-			}
-			if (tiles->at(Convert_xy_to_id(tile_x, tile_y + 2))->tile_peice == 7 && !has_moved) { // if the tile infront +1 is clear
-				temp.x = tile_x;
-				temp.y = tile_y + 2;
-				moves.push_back(temp);
-			} 
-			if (tile_x > 0) {
-				if (!tiles->at(Convert_xy_to_id(tile_x - 1, tile_y + 1))->black && tiles->at(Convert_xy_to_id(tile_x - 1, tile_y + 1))->tile_peice != 7) { // if the tile infront and left is not clear && is not a black peice
-					temp.x = tile_x - 1;
+			if (On_Bored(tile_x, tile_y +1)) {
+				if (tiles->at(Convert_xy_to_id(tile_x, tile_y + 1))->tile_peice == 7) { // if the tile infront is clear
+					temp.x = tile_x;
 					temp.y = tile_y + 1;
 					moves.push_back(temp);
 				}
 			}
-			if (tile_x < 7) {
-				if (!tiles->at(Convert_xy_to_id(tile_x + 1, tile_y + 1))->black && tiles->at(Convert_xy_to_id(tile_x + 1, tile_y + 1))->tile_peice != 7) { // if the tile infront and left is not clear && is not a black peice
-					temp.x = tile_x + 1;
-					temp.y = tile_y + 1;
+			if (On_Bored(tile_x, tile_y +2)) {
+				if (tiles->at(Convert_xy_to_id(tile_x, tile_y + 2))->tile_peice == 7 && !has_moved) { // if the tile infront +1 is clear
+					temp.x = tile_x;
+					temp.y = tile_y + 2;
 					moves.push_back(temp);
+				}
+			}
+			if (On_Bored(tile_x-1, tile_y +1)) {
+				if (tile_x > 0) {
+					if (!tiles->at(Convert_xy_to_id(tile_x - 1, tile_y + 1))->black && tiles->at(Convert_xy_to_id(tile_x - 1, tile_y + 1))->tile_peice != 7) { // if the tile infront and left is not clear && is not a black peice
+						temp.x = tile_x - 1;
+						temp.y = tile_y + 1;
+						moves.push_back(temp);
+					}
+				}
+			}
+			if (On_Bored(tile_x+1, tile_y +1)) {
+				if (tile_x < 7) {
+					if (!tiles->at(Convert_xy_to_id(tile_x + 1, tile_y + 1))->black && tiles->at(Convert_xy_to_id(tile_x + 1, tile_y + 1))->tile_peice != 7) { // if the tile infront and left is not clear && is not a black peice
+						temp.x = tile_x + 1;
+						temp.y = tile_y + 1;
+						moves.push_back(temp);
+					}
 				}
 			}
 		}
 		else { // white pawn
-			if (tiles->at(Convert_xy_to_id(tile_x, tile_y  -1))->tile_peice == 7) { // if the tile infront is clear
-				temp.x = tile_x;
-				temp.y = tile_y -1;
-				moves.push_back(temp);
-			}
-			if (tiles->at(Convert_xy_to_id(tile_x, tile_y - 2))->tile_peice == 7 && !has_moved) { // if the tile infront -1 is clear
-				temp.x = tile_x;
-				temp.y = tile_y - 2;
-				moves.push_back(temp);
-			}
-			if (tile_x > 0) {
-				if (tiles->at(Convert_xy_to_id(tile_x - 1, tile_y - 1))->black && tiles->at(Convert_xy_to_id(tile_x - 1, tile_y - 1))->tile_peice != 7) { // if the tile infront and left is not clear && is not a black peice
-					temp.x = tile_x - 1;
+			if (On_Bored(tile_x, tile_y - 1)) {
+				if (tiles->at(Convert_xy_to_id(tile_x, tile_y - 1))->tile_peice == 7) { // if the tile infront is clear
+					temp.x = tile_x;
 					temp.y = tile_y - 1;
 					moves.push_back(temp);
 				}
 			}
-			if (tile_x < 7) {
-				if (tiles->at(Convert_xy_to_id(tile_x + 1, tile_y - 1))->black && tiles->at(Convert_xy_to_id(tile_x + 1, tile_y - 1))->tile_peice != 7) { // if the tile infront and left is not clear && is not a black peice
-					temp.x = tile_x + 1;
-					temp.y = tile_y - 1;
+			if (On_Bored(tile_x, tile_y - 2)) {
+				if (tiles->at(Convert_xy_to_id(tile_x, tile_y - 2))->tile_peice == 7 && !has_moved) { // if the tile infront -1 is clear
+					temp.x = tile_x;
+					temp.y = tile_y - 2;
 					moves.push_back(temp);
+				}
+			}
+			if (tile_x > 0) {
+				if (On_Bored(tile_x - 1, tile_y - 1)) {
+					if (tiles->at(Convert_xy_to_id(tile_x - 1, tile_y - 1))->black && tiles->at(Convert_xy_to_id(tile_x - 1, tile_y - 1))->tile_peice != 7) { // if the tile infront and left is not clear && is not a black peice
+						temp.x = tile_x - 1;
+						temp.y = tile_y - 1;
+						moves.push_back(temp);
+					}
+				}
+			}
+			if (tile_x < 7) {
+				if (On_Bored(tile_x+1, tile_y -1)) {
+					if (tiles->at(Convert_xy_to_id(tile_x + 1, tile_y - 1))->black && tiles->at(Convert_xy_to_id(tile_x + 1, tile_y - 1))->tile_peice != 7) { // if the tile infront and left is not clear && is not a black peice
+						temp.x = tile_x + 1;
+						temp.y = tile_y - 1;
+						moves.push_back(temp);
+					}
 				}
 			}
 		}
@@ -535,8 +551,10 @@ std::vector <Tile::pos> Tile::get_moves(std::vector<Tile*>* tiles) {
 bool Tile::Can_take_king(std::vector<Tile*>* tiles) {
 	std::vector<pos> moves = get_moves(tiles);
 	for (int i = 0; i < moves.size(); i++) {
-		if (tiles->at(Convert_xy_to_id(moves.at(i).x, moves.at(i).y))->get_tile_peice() == 4) {
-			return true;
+		if (On_Bored(moves.at(i).x, moves.at(i).y)) {
+			if (tiles->at(Convert_xy_to_id(moves.at(i).x, moves.at(i).y))->get_tile_peice() == 4 && tiles->at(Convert_xy_to_id(moves.at(i).x, moves.at(i).y))->get_color() != black) {
+				return true;
+			}
 		}
 	}
 	return false;

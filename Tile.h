@@ -29,6 +29,8 @@ public:
 	int y;
 	};
 
+	void set_moved(bool moved) { has_moved = moved; }
+
 	int Convert_xy_to_id(int x, int y);
 	
 	void Set_peice(int new_peice, bool back);

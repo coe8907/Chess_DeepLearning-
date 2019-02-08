@@ -1,8 +1,9 @@
-#include <string>
+
 #include "bitmaps.h"
 #include "Game.h"
 #include "include/SDL.h"
 #include "include/SDL_render.h"
+#include <string>
 bool fixedSize = false;
 
 bitmaps::bitmaps() {
@@ -11,20 +12,29 @@ bitmaps::bitmaps() {
 bitmaps::bitmaps(std::string filename, int xpos, int ypos, bool usingtrans)
 {
 	m_pr = Game::m_Renderer;
-	m_pbs = SDL_LoadBMP(filename.c_str());
-	if (!m_pbs) {
-		printf("oh well fuck a duck, sdl failed to load bmp surface");
-	}
-	else {
-		if (usingtrans) {
-			Uint32 colourKey = SDL_MapRGB(m_pbs->format, 255, 0, 255);
-			SDL_SetColorKey(m_pbs, SDL_TRUE, colourKey);
+	
+	if (Game::textures.find(filename) == Game::textures.end()) {
+		m_pbs = SDL_LoadBMP(filename.c_str());
+		if (!m_pbs) {
+			printf("oh well fuck a duck, sdl failed to load bmp surface");
 		}
-		m_pbt = SDL_CreateTextureFromSurface(m_pr, m_pbs);
-		if (!m_pbt) {
-			printf("oh well fuck a duck, sdl failed to load bmp texture");
+		else {
+			if (usingtrans) {
+				Uint32 colourKey = SDL_MapRGB(m_pbs->format, 255, 0, 255);
+				SDL_SetColorKey(m_pbs, SDL_TRUE, colourKey);
+			}
+			m_pbt = SDL_CreateTextureFromSurface(m_pr, m_pbs);
+			if (!m_pbt) {
+				printf("oh well fuck a duck, sdl failed to load bmp texture");
+			}
 		}
+		Game::textures.insert(make_pair(filename, m_pbt));
 	}
+	else{
+		m_pbt = Game::textures.find(filename)->second;
+	}
+
+
 	pos.m_x = xpos;
 	pos.m_y = ypos;
 	printf("bitmaps loaded");
@@ -33,19 +43,26 @@ bitmaps::bitmaps(std::string filename, int xpos, int ypos,int width,int height, 
 {
 	
 	m_pr = Game::m_Renderer;
-	m_pbs = SDL_LoadBMP(filename.c_str());
-	if (!m_pbs) {
-		printf("oh well fuck a duck, sdl failed to load bmp surface");
+
+	if (Game::textures.find(filename) == Game::textures.end()) {
+		m_pbs = SDL_LoadBMP(filename.c_str());
+		if (!m_pbs) {
+			printf("oh well fuck a duck, sdl failed to load bmp surface");
+		}
+		else {
+			if (usingtrans) {
+				Uint32 colourKey = SDL_MapRGB(m_pbs->format, 255, 0, 255);
+				SDL_SetColorKey(m_pbs, SDL_TRUE, colourKey);
+			}
+			m_pbt = SDL_CreateTextureFromSurface(m_pr, m_pbs);
+			if (!m_pbt) {
+				printf("oh well fuck a duck, sdl failed to load bmp texture");
+			}
+		}
+		Game::textures.insert(make_pair(filename, m_pbt));
 	}
 	else {
-		if (usingtrans) {
-			Uint32 colourKey = SDL_MapRGB(m_pbs->format, 255, 0, 255);
-			SDL_SetColorKey(m_pbs, SDL_TRUE, colourKey);
-		}
-		m_pbt = SDL_CreateTextureFromSurface(m_pr, m_pbs);
-		if (!m_pbt) {
-			printf("oh well fuck a duck, sdl failed to load bmp texture");
-		}
+		m_pbt = Game::textures.find(filename)->second;
 	}
 	pos.m_x = xpos;
 	pos.m_y = ypos;
@@ -57,19 +74,26 @@ bitmaps::bitmaps(std::string filename, int xpos, int ypos,int width,int height, 
 bitmaps::bitmaps(std::string filename, int xpos, int ypos, int width, int height, bool usingtrans, int numberofframes)
 {
 	m_pr = Game::m_Renderer;
-	m_pbs = SDL_LoadBMP(filename.c_str());
-	if (!m_pbs) {
-		printf("oh well fuck a duck, sdl failed to load bmp surface");
+
+	if (Game::textures.find(filename) == Game::textures.end()) {
+		m_pbs = SDL_LoadBMP(filename.c_str());
+		if (!m_pbs) {
+			printf("oh well fuck a duck, sdl failed to load bmp surface");
+		}
+		else {
+			if (usingtrans) {
+				Uint32 colourKey = SDL_MapRGB(m_pbs->format, 255, 0, 255);
+				SDL_SetColorKey(m_pbs, SDL_TRUE, colourKey);
+			}
+			m_pbt = SDL_CreateTextureFromSurface(m_pr, m_pbs);
+			if (!m_pbt) {
+				printf("oh well fuck a duck, sdl failed to load bmp texture");
+			}
+		}
+		Game::textures.insert(make_pair(filename, m_pbt));
 	}
 	else {
-		if (usingtrans) {
-			Uint32 colourKey = SDL_MapRGB(m_pbs->format, 255, 0, 255);
-			SDL_SetColorKey(m_pbs, SDL_TRUE, colourKey);
-		}
-		m_pbt = SDL_CreateTextureFromSurface(m_pr, m_pbs);
-		if (!m_pbt) {
-			printf("oh well fuck a duck, sdl failed to load bmp texture");
-		}
+		m_pbt = Game::textures.find(filename)->second;
 	}
 	pos.m_x = xpos;
 	pos.m_y = ypos;
@@ -81,19 +105,26 @@ bitmaps::bitmaps(std::string filename, int xpos, int ypos, int width, int height
 bitmaps::bitmaps(std::string filename, int xpos, int ypos, int width, int height, bool usingtrans, int numberofframes, int numberoflayer)
 {
 	m_pr = Game::m_Renderer;
-	m_pbs = SDL_LoadBMP(filename.c_str());
-	if (!m_pbs) {
-		printf("oh well fuck a duck, sdl failed to load bmp surface");
+
+	if (Game::textures.find(filename) == Game::textures.end()) {
+		m_pbs = SDL_LoadBMP(filename.c_str());
+		if (!m_pbs) {
+			printf("oh well fuck a duck, sdl failed to load bmp surface");
+		}
+		else {
+			if (usingtrans) {
+				Uint32 colourKey = SDL_MapRGB(m_pbs->format, 255, 0, 255);
+				SDL_SetColorKey(m_pbs, SDL_TRUE, colourKey);
+			}
+			m_pbt = SDL_CreateTextureFromSurface(m_pr, m_pbs);
+			if (!m_pbt) {
+				printf("oh well fuck a duck, sdl failed to load bmp texture");
+			}
+		}
+		Game::textures.insert(make_pair(filename, m_pbt));
 	}
 	else {
-		if (usingtrans) {
-			Uint32 colourKey = SDL_MapRGB(m_pbs->format, 255, 0, 255);
-			SDL_SetColorKey(m_pbs, SDL_TRUE, colourKey);
-		}
-		m_pbt = SDL_CreateTextureFromSurface(m_pr, m_pbs);
-		if (!m_pbt) {
-			printf("oh well fuck a duck, sdl failed to load bmp texture");
-		}
+		m_pbt = Game::textures.find(filename)->second;
 	}
 	pos.m_x = xpos;
 	pos.m_y = ypos;
@@ -105,15 +136,23 @@ bitmaps::bitmaps(std::string filename, int xpos, int ypos, int width, int height
 bitmaps::bitmaps(std::string filename, int xpos, int ypos, int width, int height)
 {
 	m_pr = Game::m_Renderer;
-	m_pbs = SDL_LoadBMP(filename.c_str());
-	if (!m_pbs) {
-		printf("oh well fuck a duck, sdl failed to load bmp surface");
+
+	if (Game::textures.find(filename) == Game::textures.end()) {
+		m_pbs = SDL_LoadBMP(filename.c_str());
+		if (!m_pbs) {
+			printf("oh well fuck a duck, sdl failed to load bmp surface");
+		}
+		else {
+			
+			m_pbt = SDL_CreateTextureFromSurface(m_pr, m_pbs);
+			if (!m_pbt) {
+				printf("oh well fuck a duck, sdl failed to load bmp texture");
+			}
+		}
+		Game::textures.insert(make_pair(filename, m_pbt));
 	}
 	else {
-		m_pbt = SDL_CreateTextureFromSurface(m_pr, m_pbs);
-		if (!m_pbt) {
-			printf("oh well fuck a duck, sdl failed to load bmp texture");
-		}
+		m_pbt = Game::textures.find(filename)->second;
 	}
 	pos.m_x = xpos;
 	pos.m_y = ypos;

@@ -1,12 +1,14 @@
 #pragma once
 #include "include\SDL.h"
+#include <map>
 #include "Input.h"
 #include "Object.h"
 #include "Tile.h"
 #include <iostream>
 #include <stdio.h>
 #include <vector>
-#include "AI.h"
+#include <string>
+#include "AI_2.h"
 class Game
 {
 private:
@@ -17,14 +19,14 @@ private:
 	int move = 0;
 	bool black_in_check = false;
 	bool white_in_check = false;
-	AI temp_ai;
+	AI_2 temp_ai;
 public:
 	Game();
 	~Game();
 	void set_bored();
 	void update();
 
-	bool AI_move(AI * ai);
+	bool AI_move(AI_2 * ai);
 
 	bool make_move(int from, int to);
 
@@ -34,5 +36,6 @@ public:
 	
 	void paint();
 	static SDL_Renderer* m_Renderer;
+	static std::map<std::string, SDL_Texture*>  textures;
 };
 

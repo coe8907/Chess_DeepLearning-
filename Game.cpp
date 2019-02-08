@@ -1,6 +1,8 @@
 #include "Game.h"
 
 SDL_Renderer* Game::m_Renderer = nullptr;
+std::map<std::string, SDL_Texture*>  Game::textures;
+
 int Convert_xy_to_id(int x, int y) {
 	return x * 8 + y;
 }
@@ -25,7 +27,12 @@ Game::Game(){
 	for (int x = 0; x < 8; x++) {
 		for (int y = 0; y < 8; y++) {
 			floor.push_back(new Tile(x, y, 0));
-			floor.at(x*8 + y)->Set_peice(7, true);
+			if ((x * 8 + (y+x)) % 2 == 0) {
+				floor.at(x * 8 + y)->Set_peice(7, true);
+			}
+			else {
+				floor.at(x * 8 + y)->Set_peice(7, false);
+			}
 		}
 	}
 	for (int x = 0; x < 8; x++) {
@@ -43,57 +50,34 @@ Game::Game(){
 
 void Game::set_bored()
 {
-	tiles.at(Convert_xy_to_id(4, 4))->Set_peice(2,false);
 
-	tiles.at(0)->Set_peice(6, true);
-	tiles.at(1)->Set_peice(1, true);
+	tiles.at(Convert_xy_to_id(0,0))->Set_peice(6, true);
+	tiles.at(Convert_xy_to_id(0,7))->Set_peice(6, false);
+	tiles.at(Convert_xy_to_id(7, 0))->Set_peice(6, true);
+	tiles.at(Convert_xy_to_id(7, 7))->Set_peice(6, false);
 
-	tiles.at(6)->Set_peice(1, false);
-	tiles.at(7)->Set_peice(6, false);
 
-	tiles.at(8)->Set_peice(5, true);
-	tiles.at(9)->Set_peice(1, true);
 
-	tiles.at(14)->Set_peice(1, false);
-	tiles.at(15)->Set_peice(5, false);
+	tiles.at(Convert_xy_to_id(1, 0))->Set_peice(5, true);
+	tiles.at(Convert_xy_to_id(1, 7))->Set_peice(5, false);
+	tiles.at(Convert_xy_to_id(6, 0))->Set_peice(5, true);
+	tiles.at(Convert_xy_to_id(6, 7))->Set_peice(5, false);
 
-	tiles.at(16)->Set_peice(2, true);
-	tiles.at(17)->Set_peice(1, true);
+	tiles.at(Convert_xy_to_id(2, 0))->Set_peice(2, true);
+	tiles.at(Convert_xy_to_id(2, 7))->Set_peice(2, false);
+	tiles.at(Convert_xy_to_id(5, 0))->Set_peice(2, true);
+	tiles.at(Convert_xy_to_id(5, 7))->Set_peice(2, false);
 
-	tiles.at(22)->Set_peice(1, false);
-	tiles.at(23)->Set_peice(2, false);
+	tiles.at(Convert_xy_to_id(4, 0))->Set_peice(3, true);
+	tiles.at(Convert_xy_to_id(4, 7))->Set_peice(3, false);
 
-	tiles.at(24)->Set_peice(4, true);
-	tiles.at(25)->Set_peice(1, true);
-
-	tiles.at(30)->Set_peice(1, false);
-	tiles.at(31)->Set_peice(4, false);
-
-	tiles.at(32)->Set_peice(3, true);
-	tiles.at(33)->Set_peice(1, true);
-
-	tiles.at(38)->Set_peice(1, false);
-	tiles.at(39)->Set_peice(3, false);
-
-	tiles.at(40)->Set_peice(2, true);
-	tiles.at(41)->Set_peice(1, true);
-
-	tiles.at(46)->Set_peice(1, false);
-	tiles.at(47)->Set_peice(2, false);
-
-	tiles.at(48)->Set_peice(4, true);
-	tiles.at(49)->Set_peice(1, true);
-
-	tiles.at(54)->Set_peice(1, false);
-	tiles.at(55)->Set_peice(4, false);
+	tiles.at(Convert_xy_to_id(3, 0))->Set_peice(4, true);
+	tiles.at(Convert_xy_to_id(3, 7))->Set_peice(4, false);
 	
-	tiles.at(56)->Set_peice(5, true);
-	tiles.at(57)->Set_peice(1, true);
-
-	tiles.at(62)->Set_peice(1, false);
-	tiles.at(63)->Set_peice(5, false);
-	
-	
+	for (int i = 0; i < 8; i++) {
+		tiles.at(Convert_xy_to_id(i, 1))->Set_peice(1, true);
+		tiles.at(Convert_xy_to_id(i, 6))->Set_peice(1, false);
+	}
 }
 
 std::vector<Tile::pos> t;
@@ -130,7 +114,7 @@ void Game::update() {
 }
 
 
-bool Game::AI_move(AI* ai) {
+bool Game::AI_move(AI_2* ai) {
 	my_move t = ai->Get_move(tiles);
 	return make_move(t.from, t.to);
 }
@@ -230,6 +214,7 @@ bool Game::make_move(int to) {
 	if (white_in_check == true) {
 		printf("White in Check !!!");
 	}
+	temp.at(to)->set_moved(true);
 	return true;
 }
 
@@ -246,7 +231,9 @@ void Game::paint() {
 		}
 		for (int x = 0; x < 8; x++) {
 			for (int y = 0; y < 8; y++) {
-				tiles.at(x * 8 + y)->paint();
+				if (tiles.at(x * 8 + y)->Get_peice() != 7) {
+					tiles.at(x * 8 + y)->paint();
+				}
 			}
 		}
 		SDL_RenderPresent(m_Renderer);

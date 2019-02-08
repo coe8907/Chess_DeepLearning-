@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include "include\SDL.h"
+#include <map>
 struct SDL_Surface;
 struct SDL_Texture;
 struct SDL_Renderer;
