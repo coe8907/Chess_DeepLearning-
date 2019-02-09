@@ -4,6 +4,7 @@
 #include <algorithm>
 #include <iostream>
 #include <thread>
+
 struct my_move {
 	int from = 0;
 	int to = 0;
@@ -12,8 +13,7 @@ struct my_move {
 class AI_2
 {
 private:
-	int Convert_xy_to_id3(int x, int y);
-	bool On_Bored(int x, int y);
+
 	int test_pre = 0;
 	int cut_peices = 0;
 public:

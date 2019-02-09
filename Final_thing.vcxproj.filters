@@ -36,9 +36,6 @@
     <ClCompile Include="Tile.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="AI.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="AI_2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -62,10 +59,10 @@
     <ClInclude Include="Tile.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="AI.h">
+    <ClInclude Include="AI_2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="AI_2.h">
+    <ClInclude Include="Consts.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

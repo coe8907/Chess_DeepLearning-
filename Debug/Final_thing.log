@@ -1,4 +1,25 @@
-﻿  Game.cpp
+﻿  AI_2.cpp
 c:\users\coeol\onedrive\documents\cookie_clicker_rep\chess_deeplearning-\input.h(25): warning C4552: '-': result of expression not used
-c:\users\coeol\onedrive\documents\cookie_clicker_rep\chess_deeplearning-\game.cpp(134): warning C4018: '<': signed/unsigned mismatch
+c:\users\coeol\onedrive\documents\cookie_clicker_rep\chess_deeplearning-\ai_2.cpp(9): warning C4018: '<': signed/unsigned mismatch
+c:\users\coeol\onedrive\documents\cookie_clicker_rep\chess_deeplearning-\ai_2.cpp(14): warning C4018: '<': signed/unsigned mismatch
+c:\users\coeol\onedrive\documents\cookie_clicker_rep\chess_deeplearning-\ai_2.cpp(18): warning C4018: '<': signed/unsigned mismatch
+c:\users\coeol\onedrive\documents\cookie_clicker_rep\chess_deeplearning-\ai_2.cpp(58): warning C4018: '<': signed/unsigned mismatch
+c:\users\coeol\onedrive\documents\cookie_clicker_rep\chess_deeplearning-\ai_2.cpp(67): warning C4018: '<': signed/unsigned mismatch
+c:\users\coeol\onedrive\documents\cookie_clicker_rep\chess_deeplearning-\ai_2.cpp(90): warning C4018: '<': signed/unsigned mismatch
+c:\users\coeol\onedrive\documents\cookie_clicker_rep\chess_deeplearning-\ai_2.cpp(100): warning C4018: '<': signed/unsigned mismatch
+c:\users\coeol\onedrive\documents\cookie_clicker_rep\chess_deeplearning-\ai_2.cpp(134): warning C4018: '<': signed/unsigned mismatch
+c:\users\coeol\onedrive\documents\cookie_clicker_rep\chess_deeplearning-\ai_2.cpp(137): warning C4018: '<': signed/unsigned mismatch
+c:\users\coeol\onedrive\documents\cookie_clicker_rep\chess_deeplearning-\ai_2.cpp(171): warning C4018: '<': signed/unsigned mismatch
+  Game.cpp
+c:\users\coeol\onedrive\documents\cookie_clicker_rep\chess_deeplearning-\input.h(25): warning C4552: '-': result of expression not used
+  Main.cpp
+c:\users\coeol\onedrive\documents\cookie_clicker_rep\chess_deeplearning-\input.h(25): warning C4552: '-': result of expression not used
+  Tile.cpp
+c:\users\coeol\onedrive\documents\cookie_clicker_rep\chess_deeplearning-\input.h(25): warning C4552: '-': result of expression not used
+c:\users\coeol\onedrive\documents\cookie_clicker_rep\chess_deeplearning-\tile.cpp(1069): warning C4018: '<': signed/unsigned mismatch
+c:\users\coeol\onedrive\documents\cookie_clicker_rep\chess_deeplearning-\tile.cpp(1078): warning C4018: '<': signed/unsigned mismatch
+c:\users\coeol\onedrive\documents\cookie_clicker_rep\chess_deeplearning-\tile.cpp(1081): warning C4018: '<': signed/unsigned mismatch
+  bitmaps.cpp
+c:\users\coeol\onedrive\documents\cookie_clicker_rep\chess_deeplearning-\input.h(25): warning C4552: '-': result of expression not used
+  Generating Code...
   Final_thing.vcxproj -> C:\Users\coeol\OneDrive\Documents\cookie_clicker_rep\Chess_DeepLearning-\Debug\Final_thing.exe

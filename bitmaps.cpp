@@ -216,9 +216,9 @@ SDL_Surface* bitmaps::getsurface()
 
 bitmaps::~bitmaps(){
 	if (m_pbt) {
-		SDL_DestroyTexture(m_pbt);
+		//SDL_DestroyTexture(m_pbt);
 	}
 	if (m_pbs) {
-		SDL_FreeSurface(m_pbs);
+		//SDL_FreeSurface(m_pbs);
 	}
 }

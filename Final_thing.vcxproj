@@ -147,7 +147,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AI.cpp" />
     <ClCompile Include="AI_2.cpp" />
     <ClCompile Include="bitmaps.cpp" />
     <ClCompile Include="Entity.cpp" />
@@ -158,9 +157,9 @@
     <ClCompile Include="Tile.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AI.h" />
     <ClInclude Include="AI_2.h" />
     <ClInclude Include="bitmaps.h" />
+    <ClInclude Include="Consts.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Input.h" />
