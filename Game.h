@@ -20,6 +20,7 @@ private:
 	bool black_in_check = false;
 	bool white_in_check = false;
 	AI_2 temp_ai;
+	AI_2 temp_ai_white;
 public:
 	Game();
 	~Game();

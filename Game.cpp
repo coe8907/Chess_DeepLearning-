@@ -43,7 +43,7 @@ Game::Game(){
 	}
 	
 	set_bored();
-	
+	temp_ai_white.black = false;
 }
 
 
@@ -88,6 +88,11 @@ void Game::update() {
 		AI_move(&temp_ai);
 	}
 	else {
+		AI_move(&temp_ai_white);
+	}
+	
+	/*else {
+		
 		if (tiles.at(Convert_xy_to_id(input.last_click.x / 40, input.last_click.y / 40))->get_color() == false && tiles.at(Convert_xy_to_id(input.last_click.x / 40, input.last_click.y / 40))->get_tile_peice() != 7) {
 			for (int i = 0; i < t.size(); i++) {
 				floor.at(Convert_xy_to_id(t.at(i).x, t.at(i).y))->Set_peice(7, true);
@@ -110,9 +115,8 @@ void Game::update() {
 				}
 			}
 		}
-	}
+	}*/
 }
-
 
 bool Game::AI_move(AI_2* ai) {
 	my_move t = ai->Get_move(tiles);
@@ -155,8 +159,8 @@ bool Game::make_move(int to) {
 				}
 			}
 		}
-
 	}
+
 	else {// white move 
 		// check if move would put in check 
 		for (int x = 0; x < 7; x++) {
@@ -173,6 +177,7 @@ bool Game::make_move(int to) {
 	}
 
 	Tile * t = tiles.at(to);
+	t->set_moved(true);
 	 old_x = tiles.at(selected)->get_tile_x();
 	 old_y = tiles.at(selected)->get_tile_y();
 	tiles.at(selected)->move(t->get_tile_x(), t->get_tile_y());
@@ -214,7 +219,7 @@ bool Game::make_move(int to) {
 	if (white_in_check == true) {
 		printf("White in Check !!!");
 	}
-	temp.at(to)->set_moved(true);
+	
 	return true;
 }
 

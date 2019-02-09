@@ -1,18 +1,19 @@
 ﻿  AI_2.cpp
-c:\users\oliver\desktop\final_thing\Input.h(25): warning C4552: '-': operator has no effect; expected operator with side-effect
-AI_2.cpp(19): warning C4018: '<': signed/unsigned mismatch
-AI_2.cpp(24): warning C4018: '<': signed/unsigned mismatch
-AI_2.cpp(27): warning C4018: '<': signed/unsigned mismatch
-AI_2.cpp(59): warning C4018: '<': signed/unsigned mismatch
-AI_2.cpp(65): warning C4018: '<': signed/unsigned mismatch
-AI_2.cpp(69): warning C4018: '<': signed/unsigned mismatch
-AI_2.cpp(96): warning C4018: '<': signed/unsigned mismatch
-AI_2.cpp(100): warning C4018: '<': signed/unsigned mismatch
-AI_2.cpp(158): warning C4018: '<': signed/unsigned mismatch
+c:\users\coeol\onedrive\documents\cookie_clicker_rep\chess_deeplearning-\input.h(25): warning C4552: '-': result of expression not used
+c:\users\coeol\onedrive\documents\cookie_clicker_rep\chess_deeplearning-\ai_2.cpp(19): warning C4018: '<': signed/unsigned mismatch
+c:\users\coeol\onedrive\documents\cookie_clicker_rep\chess_deeplearning-\ai_2.cpp(24): warning C4018: '<': signed/unsigned mismatch
+c:\users\coeol\onedrive\documents\cookie_clicker_rep\chess_deeplearning-\ai_2.cpp(28): warning C4018: '<': signed/unsigned mismatch
+c:\users\coeol\onedrive\documents\cookie_clicker_rep\chess_deeplearning-\ai_2.cpp(68): warning C4018: '<': signed/unsigned mismatch
+c:\users\coeol\onedrive\documents\cookie_clicker_rep\chess_deeplearning-\ai_2.cpp(77): warning C4018: '<': signed/unsigned mismatch
+c:\users\coeol\onedrive\documents\cookie_clicker_rep\chess_deeplearning-\ai_2.cpp(100): warning C4018: '<': signed/unsigned mismatch
+c:\users\coeol\onedrive\documents\cookie_clicker_rep\chess_deeplearning-\ai_2.cpp(110): warning C4018: '<': signed/unsigned mismatch
+c:\users\coeol\onedrive\documents\cookie_clicker_rep\chess_deeplearning-\ai_2.cpp(162): warning C4018: '<': signed/unsigned mismatch
+c:\users\coeol\onedrive\documents\cookie_clicker_rep\chess_deeplearning-\ai_2.cpp(165): warning C4018: '<': signed/unsigned mismatch
+c:\users\coeol\onedrive\documents\cookie_clicker_rep\chess_deeplearning-\ai_2.cpp(199): warning C4018: '<': signed/unsigned mismatch
 LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/LTCG' specification
   Generating code
-  1 of 414 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
+  4 of 426 functions ( 0.9%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    1 functions had inline decision re-evaluated but remain unchanged
+    7 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
-  Final_thing.vcxproj -> C:\Users\Oliver\Desktop\Final_thing\Release\Final_thing.exe
+  Final_thing.vcxproj -> C:\Users\coeol\OneDrive\Documents\cookie_clicker_rep\Chess_DeepLearning-\Release\Final_thing.exe

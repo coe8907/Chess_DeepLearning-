@@ -1,18 +1,4 @@
-﻿  AI_2.cpp
-c:\users\oliver\desktop\final_thing\input.h(25): warning C4552: '-': operator has no effect; expected operator with side-effect
-c:\users\oliver\desktop\final_thing\ai_2.cpp(17): warning C4018: '<': signed/unsigned mismatch
-c:\users\oliver\desktop\final_thing\ai_2.cpp(22): warning C4018: '<': signed/unsigned mismatch
-c:\users\oliver\desktop\final_thing\ai_2.cpp(25): warning C4018: '<': signed/unsigned mismatch
-c:\users\oliver\desktop\final_thing\ai_2.cpp(41): warning C4018: '<': signed/unsigned mismatch
-c:\users\oliver\desktop\final_thing\ai_2.cpp(53): warning C4018: '<': signed/unsigned mismatch
-c:\users\oliver\desktop\final_thing\ai_2.cpp(59): warning C4018: '<': signed/unsigned mismatch
-c:\users\oliver\desktop\final_thing\ai_2.cpp(62): warning C4018: '<': signed/unsigned mismatch
-c:\users\oliver\desktop\final_thing\ai_2.cpp(75): warning C4018: '<': signed/unsigned mismatch
-c:\users\oliver\desktop\final_thing\ai_2.cpp(78): warning C4018: '<': signed/unsigned mismatch
-c:\users\oliver\desktop\final_thing\ai_2.cpp(120): warning C4018: '<': signed/unsigned mismatch
-  Generating Code...
-  Skipping... (no relevant changes detected)
-  bitmaps.cpp
-  Main.cpp
-  Game.cpp
-  Final_thing.vcxproj -> C:\Users\Oliver\Desktop\Final_thing\Debug\Final_thing.exe
+﻿  Game.cpp
+c:\users\coeol\onedrive\documents\cookie_clicker_rep\chess_deeplearning-\input.h(25): warning C4552: '-': result of expression not used
+c:\users\coeol\onedrive\documents\cookie_clicker_rep\chess_deeplearning-\game.cpp(134): warning C4018: '<': signed/unsigned mismatch
+  Final_thing.vcxproj -> C:\Users\coeol\OneDrive\Documents\cookie_clicker_rep\Chess_DeepLearning-\Debug\Final_thing.exe

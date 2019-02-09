@@ -1,0 +1,23 @@
+﻿  AI.cpp
+c:\users\coeol\onedrive\documents\cookie_clicker_rep\chess_deeplearning-\input.h(25): warning C4552: '-': result of expression not used
+c:\users\coeol\onedrive\documents\cookie_clicker_rep\chess_deeplearning-\ai.cpp(67): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  AI_2.cpp
+c:\users\coeol\onedrive\documents\cookie_clicker_rep\chess_deeplearning-\input.h(25): warning C4552: '-': result of expression not used
+  bitmaps.cpp
+c:\users\coeol\onedrive\documents\cookie_clicker_rep\chess_deeplearning-\input.h(25): warning C4552: '-': result of expression not used
+  Entity.cpp
+c:\users\coeol\onedrive\documents\cookie_clicker_rep\chess_deeplearning-\input.h(25): warning C4552: '-': result of expression not used
+  Game.cpp
+c:\users\coeol\onedrive\documents\cookie_clicker_rep\chess_deeplearning-\input.h(25): warning C4552: '-': result of expression not used
+  Input.cpp
+c:\users\coeol\onedrive\documents\cookie_clicker_rep\chess_deeplearning-\input.h(25): warning C4552: '-': result of expression not used
+  Main.cpp
+c:\users\coeol\onedrive\documents\cookie_clicker_rep\chess_deeplearning-\input.h(25): warning C4552: '-': result of expression not used
+  Object.cpp
+c:\users\coeol\onedrive\documents\cookie_clicker_rep\chess_deeplearning-\input.h(25): warning C4552: '-': result of expression not used
+  Tile.cpp
+c:\users\coeol\onedrive\documents\cookie_clicker_rep\chess_deeplearning-\input.h(25): warning C4552: '-': result of expression not used
+  Generating code
+  All 439 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  Final_thing.vcxproj -> C:\Users\coeol\OneDrive\Documents\cookie_clicker_rep\Chess_DeepLearning-\x64\Release\Final_thing.exe

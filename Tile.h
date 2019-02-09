@@ -46,7 +46,18 @@ public:
 	int get_tile_y() { return tile_y; }
 	bool get_color() { return black; }
 	int Get_peice() { return tile_peice; }
-
+	
+	
+	
+	int get_value() { 
+		if (tile_peice == 1)return 1;
+		if (tile_peice == 2)return 3;
+		if (tile_peice == 3)return 6;
+		if (tile_peice == 4)return 3;
+		if (tile_peice == 5)return 3;
+		if (tile_peice == 6)return 5;
+		return 0;
+	}
 
 	Tile(int x,int y,int peice);
 	~Tile();

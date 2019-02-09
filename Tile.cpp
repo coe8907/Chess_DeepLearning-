@@ -7,7 +7,7 @@ Tile::Tile(int x, int y, int peice):Object("assets/chess.bmp",x*40,y*40,40,40,tr
 	tile_x = x;
 	tile_y = y;
 	tile_peice = peice;
-	has_moved = true;
+	has_moved = false;
 }
 
 void Tile::move(int x, int y)
@@ -15,6 +15,7 @@ void Tile::move(int x, int y)
 	tile_x = x; tile_y = y;
 	setx(x * 40);
 	sety(y * 40);
+	has_moved = true;
 }
 
 int Tile::Convert_xy_to_id(int x, int y) {
@@ -28,7 +29,7 @@ int Tile::Convert_xy_to_id(int x, int y) {
 
 void Tile::Set_peice(int new_peice,bool new_black)
 {
-	has_moved = false;
+	//has_moved = false;
 	tile_peice = new_peice;
 	black = new_black;
 
@@ -50,11 +51,12 @@ std::vector <Tile::pos> Tile::get_moves(std::vector<Tile*>* tiles) {
 				if (tiles->at(Convert_xy_to_id(tile_x, tile_y + 1))->tile_peice == 7) { // if the tile infront is clear
 					temp.x = tile_x;
 					temp.y = tile_y + 1;
+
 					moves.push_back(temp);
 				}
 			}
-			if (On_Bored(tile_x, tile_y +2)) {
-				if (tiles->at(Convert_xy_to_id(tile_x, tile_y + 2))->tile_peice == 7 && !has_moved) { // if the tile infront +1 is clear
+			if (On_Bored(tile_x, tile_y +2) && has_moved == false) {
+				if (tiles->at(Convert_xy_to_id(tile_x, tile_y + 2))->tile_peice == 7 ) { // if the tile infront +1 is clear
 					temp.x = tile_x;
 					temp.y = tile_y + 2;
 					moves.push_back(temp);
@@ -87,8 +89,8 @@ std::vector <Tile::pos> Tile::get_moves(std::vector<Tile*>* tiles) {
 					moves.push_back(temp);
 				}
 			}
-			if (On_Bored(tile_x, tile_y - 2)) {
-				if (tiles->at(Convert_xy_to_id(tile_x, tile_y - 2))->tile_peice == 7 && !has_moved) { // if the tile infront -1 is clear
+			if (On_Bored(tile_x, tile_y - 2) && has_moved == false) {
+				if (tiles->at(Convert_xy_to_id(tile_x, tile_y - 2))->tile_peice == 7 && has_moved == false) { // if the tile infront -1 is clear
 					temp.x = tile_x;
 					temp.y = tile_y - 2;
 					moves.push_back(temp);

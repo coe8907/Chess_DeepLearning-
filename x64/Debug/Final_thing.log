@@ -1,27 +1,23 @@
-﻿  Player.cpp
-  Object.cpp
-  Main.cpp
-  Input.cpp
-  Game.cpp
-  Entity.cpp
+﻿  AI.cpp
+c:\users\coeol\onedrive\documents\cookie_clicker_rep\chess_deeplearning-\input.h(25): warning C4552: '-': result of expression not used
+c:\users\coeol\onedrive\documents\cookie_clicker_rep\chess_deeplearning-\ai.cpp(67): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  AI_2.cpp
+c:\users\coeol\onedrive\documents\cookie_clicker_rep\chess_deeplearning-\input.h(25): warning C4552: '-': result of expression not used
+c:\users\coeol\onedrive\documents\cookie_clicker_rep\chess_deeplearning-\ai_2.cpp(71): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
+c:\users\coeol\onedrive\documents\cookie_clicker_rep\chess_deeplearning-\ai_2.cpp(103): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
   bitmaps.cpp
+c:\users\coeol\onedrive\documents\cookie_clicker_rep\chess_deeplearning-\input.h(25): warning C4552: '-': result of expression not used
+  Entity.cpp
+c:\users\coeol\onedrive\documents\cookie_clicker_rep\chess_deeplearning-\input.h(25): warning C4552: '-': result of expression not used
+  Game.cpp
+c:\users\coeol\onedrive\documents\cookie_clicker_rep\chess_deeplearning-\input.h(25): warning C4552: '-': result of expression not used
+  Input.cpp
+c:\users\coeol\onedrive\documents\cookie_clicker_rep\chess_deeplearning-\input.h(25): warning C4552: '-': result of expression not used
+  Main.cpp
+c:\users\coeol\onedrive\documents\cookie_clicker_rep\chess_deeplearning-\input.h(25): warning C4552: '-': result of expression not used
+  Object.cpp
+c:\users\coeol\onedrive\documents\cookie_clicker_rep\chess_deeplearning-\input.h(25): warning C4552: '-': result of expression not used
+  Tile.cpp
+c:\users\coeol\onedrive\documents\cookie_clicker_rep\chess_deeplearning-\input.h(25): warning C4552: '-': result of expression not used
   Generating Code...
-bitmaps.obj : error LNK2019: unresolved external symbol SDL_RWFromFile referenced in function "public: __cdecl bitmaps::bitmaps(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,int,int,int,int,bool)" (??0bitmaps@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHHH_N@Z)
-bitmaps.obj : error LNK2019: unresolved external symbol SDL_MapRGB referenced in function "public: __cdecl bitmaps::bitmaps(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,int,int,int,int,bool)" (??0bitmaps@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHHH_N@Z)
-bitmaps.obj : error LNK2019: unresolved external symbol SDL_FreeSurface referenced in function "public: __cdecl bitmaps::~bitmaps(void)" (??1bitmaps@@QEAA@XZ)
-bitmaps.obj : error LNK2019: unresolved external symbol SDL_LoadBMP_RW referenced in function "public: __cdecl bitmaps::bitmaps(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,int,int,int,int,bool)" (??0bitmaps@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHHH_N@Z)
-bitmaps.obj : error LNK2019: unresolved external symbol SDL_SetColorKey referenced in function "public: __cdecl bitmaps::bitmaps(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,int,int,int,int,bool)" (??0bitmaps@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHHH_N@Z)
-bitmaps.obj : error LNK2019: unresolved external symbol SDL_CreateTextureFromSurface referenced in function "public: __cdecl bitmaps::bitmaps(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,int,int,int,int,bool)" (??0bitmaps@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHHH_N@Z)
-bitmaps.obj : error LNK2019: unresolved external symbol SDL_RenderCopy referenced in function "public: void __cdecl bitmaps::draw(void)" (?draw@bitmaps@@QEAAXXZ)
-bitmaps.obj : error LNK2019: unresolved external symbol SDL_DestroyTexture referenced in function "public: __cdecl bitmaps::~bitmaps(void)" (??1bitmaps@@QEAA@XZ)
-Game.obj : error LNK2019: unresolved external symbol SDL_CreateWindow referenced in function "public: __cdecl Game::Game(void)" (??0Game@@QEAA@XZ)
-Game.obj : error LNK2019: unresolved external symbol SDL_DestroyWindow referenced in function "public: __cdecl Game::~Game(void)" (??1Game@@QEAA@XZ)
-Game.obj : error LNK2019: unresolved external symbol SDL_CreateRenderer referenced in function "public: __cdecl Game::Game(void)" (??0Game@@QEAA@XZ)
-Game.obj : error LNK2019: unresolved external symbol SDL_SetRenderDrawColor referenced in function "public: void __cdecl Game::paint(void)" (?paint@Game@@QEAAXXZ)
-Game.obj : error LNK2019: unresolved external symbol SDL_RenderClear referenced in function "public: void __cdecl Game::paint(void)" (?paint@Game@@QEAAXXZ)
-Game.obj : error LNK2019: unresolved external symbol SDL_RenderPresent referenced in function "public: void __cdecl Game::paint(void)" (?paint@Game@@QEAAXXZ)
-Game.obj : error LNK2019: unresolved external symbol SDL_DestroyRenderer referenced in function "public: __cdecl Game::~Game(void)" (??1Game@@QEAA@XZ)
-Game.obj : error LNK2019: unresolved external symbol SDL_Init referenced in function "public: __cdecl Game::Game(void)" (??0Game@@QEAA@XZ)
-Input.obj : error LNK2019: unresolved external symbol SDL_GetMouseState referenced in function "protected: struct Input::pos __cdecl Input::getmousepos(void)" (?getmousepos@Input@@IEAA?AUpos@1@XZ)
-Input.obj : error LNK2019: unresolved external symbol SDL_PollEvent referenced in function "protected: struct Input::keys __cdecl Input::I_Update(void)" (?I_Update@Input@@IEAA?AUkeys@1@XZ)
-C:\Users\Oliver\Desktop\Final_thing\x64\Debug\Final_thing.exe : fatal error LNK1120: 18 unresolved externals
+  Final_thing.vcxproj -> C:\Users\coeol\OneDrive\Documents\cookie_clicker_rep\Chess_DeepLearning-\x64\Debug\Final_thing.exe
